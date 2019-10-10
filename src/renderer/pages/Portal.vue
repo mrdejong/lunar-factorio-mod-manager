@@ -53,8 +53,9 @@
         </div>
 
         <OnlineModsList />
+
         <div class="menu">
-          <span class="menu-label">Results: {{ numMods }}</span>
+          <span class="menu-label">Results: {{ totalOnlineMods }}</span>
           <span class="menu-label">Page {{ onlineModsPage + 1 }} of {{ maxPageOnlineMods + 1 }}</span>
           <div>
             <button
@@ -118,7 +119,10 @@ export default {
       username: state => state.username,
       onlineQuery: state => state.onlineQuery,
     }),
-    ...mapGetters(['maxPageOnlineMods']),
+      ...mapGetters([
+          'maxPageOnlineMods',
+          'totalOnlineMods'
+      ]),
   },
   created () {
     this.fetchOnlineMods()
