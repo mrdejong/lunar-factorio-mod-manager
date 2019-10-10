@@ -66,10 +66,10 @@ export const totalOnlineMods = (state, getters) => {
   return getters.onlineMods.length
 }
 
+export const maxPageOnlineMods = (state, getters) => {
+  if (!state.onlineMods || !state.onlineMods.length === 0) return 0
 
-  count = state.onlineQuery === ''
-    ? count
-    : getters.search(state.onlineQuery, mods).length
+  const count = getters.onlineMods.length
 
   return Math.floor(count / state.onlineModsItemPerPage) - 1
 }
