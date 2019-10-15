@@ -2,7 +2,9 @@
   <div id="app">
     <Toast position="ne" />
     <Navbar />
-    <RouterView class="content" />
+    <div class="content">
+      <RouterView class="inner-content" />
+    </div>
   </div>
 </template>
 

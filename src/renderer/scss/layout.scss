@@ -3,13 +3,28 @@ div {
 }
 
 .content {
-  border: 10px solid $background-secondary-color;
+  background-color: $background-secondary-color;
   box-sizing: border-box;
+  box-shadow: inset -3px 1px 2px 0px rgba(#fff, .4);
 
   width: 100vw;
   height: calc(100vh - #{$navbar-height-lg});
 
   overflow: hidden;
+
+  position: relative;
+  z-index: 1000;
+
+  padding-top: 2px;
+
+  .inner-content {
+    background-color: $background-secondary-color;
+
+    position: relative;
+    z-index: 1002;
+
+    padding: 5px 10px;
+  }
 
   @media- (max-width: $breakpoint-sm) {
     height: calc(100vh - 10px - #{$navbar-height-sm});
