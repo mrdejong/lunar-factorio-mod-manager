@@ -3,25 +3,25 @@
     <nav class="menu-section nav">
       <router-link
         to="/profiles"
-        class="btn"
+        class="tab"
       >
         Profiles
       </router-link>
       <router-link
         to="/mods"
-        class="btn"
+        class="tab"
       >
         Mods
       </router-link>
       <router-link
         to="/saves"
-        class="btn"
+        class="tab"
       >
         Saves
       </router-link>
       <router-link
         to="/portal"
-        class="btn"
+        class="tab"
       >
         Mod Portal
       </router-link>

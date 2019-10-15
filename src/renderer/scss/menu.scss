@@ -43,24 +43,68 @@
   .nav {
     margin-bottom: -5px;
 
-    .btn {
-      box-shadow: none;
-      border-bottom-width: 2px;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
+    .tab {
+      background-color: $element-background-color;
+      color: $text-primary-color;
+
+      outline: none;
+      text-decoration: none;
+      box-shadow: // 1px 1px 2px 0 $element-shadow-color,
+                  inset 0 3px 2px -2px rgba(#fff, .7),
+                  inset 3px 0px 2px -3px rgba(0, 0, 0, 0.4),
+                  inset -3px 0px 2px -3px rgba(0, 0, 0, 0.4);
+
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
 
       user-select: none;
 
+      font-weight: 700;
+      font-size: .9rem;
+      font-family: 'Noto Sans', sans-serif;
+
+      position: relative;
+      z-index: 500;
+
+      padding: 8px 14px;
+      padding-top: 8px;
+      padding-bottom: 9px;
+
+      margin-bottom: -2px;
+
+      margin-right: .5px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+
       &:hover {
         box-shadow: 0 0 3px 2px $highlight-color;
+        background-color: $highlight-color;
+        font-weight: 700;
+        z-index: 501;
       }
 
       &.router-link-active {
         border-bottom-color: $background-secondary-color;
-        box-shadow: none;
+        box-shadow: // 1px 1px 2px 0 $element-shadow-color,
+                    inset 0 3px 2px -2px rgba(#fff, .7),
+                    inset 3px 0px 2px -2px rgba(0, 0, 0, 0.4),
+                    inset -3px 0px 2px -2px rgba(0, 0, 0, 0.4);
 
         background-color: $background-secondary-color;
         color: $text-active-color;
+
+        z-index: 1001;
+
+        &:hover {
+          box-shadow: // 1px 1px 2px 0 $element-shadow-color,
+                      inset 0 3px 2px -2px rgba(#fff, .7),
+                      inset 3px 0px 2px -2px rgba(0, 0, 0, 0.4),
+                      inset -3px 0px 2px -2px rgba(0, 0, 0, 0.4);
+          background-color: $background-secondary-color;
+
+        }
       }
 
     }
