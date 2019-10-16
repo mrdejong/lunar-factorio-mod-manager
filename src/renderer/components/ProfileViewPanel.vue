@@ -40,35 +40,38 @@
       </div>
     </div>
 
-    <table v-if="profiles && activeProfile >= 0">
-      <thead>
-        <tr>
-          <th class="cell-check" />
-          <th>Name</th>
-          <th>Version</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="mod in profiles[activeProfile].mods"
-          :class="{ selected: mod.name === selectedMod.name }"
-        >
-          <td class="cell-check">
-            <button
-              @click="removeModFromCurrentProfile(mod)"
-              :disabled="mod.name === 'base'"
-              class="btn red"
-            >
-              <i class="fa fa-minus" />
-            </button>
-          </td>
-          <td @click="selectInstalledMod(mod.name)">
-            {{ mod.title || mod.name }}
-          </td>
-          <td>{{ mod.version }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="mod-list">
+      <table v-if="profiles && activeProfile >= 0">
+        <thead>
+          <tr>
+            <th class="cell-check" />
+            <th>Name</th>
+            <th>Version</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="mod in profiles[activeProfile].mods"
+            v-bind:key="mod.name"
+            :class="{ selected: mod.name === selectedMod.name }"
+          >
+            <td class="cell-check">
+              <button
+                @click="removeModFromCurrentProfile(mod)"
+                :disabled="mod.name === 'base'"
+                class="btn red"
+              >
+                <i class="fa fa-minus" />
+              </button>
+            </td>
+            <td @click="selectInstalledMod(mod.name)">
+              {{ mod.title || mod.name }}
+            </td>
+            <td>{{ mod.version }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -99,5 +102,9 @@ export default {
 <style lang="scss" scoped>
  .profile-view-panel {
      overflow-y: auto;
+ }
+
+ .mod-list {
+   height: 600px;
  }
 </style>
