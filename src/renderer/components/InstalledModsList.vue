@@ -17,6 +17,7 @@
       <tbody>
         <tr
           v-for="mod in installedMods"
+          v-bind:key="mod.name"
           :class="{ selected: mod.name === selectedMod.name }"
         >
           <td class="cell-check">
@@ -67,5 +68,6 @@ export default {
 <style>
 .installed-mods-list {
   overflow-y: auto;
+  height: 400px;
 }
 </style>
