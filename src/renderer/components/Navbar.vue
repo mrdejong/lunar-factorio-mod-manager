@@ -25,6 +25,12 @@
       >
         Mod Portal
       </router-link>
+      <router-link
+        to="/settings"
+        class="btn"
+      >
+        Settings
+      </router-link>
     </nav>
     <div class="menu-section commands">
       <button
