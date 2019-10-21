@@ -17,7 +17,7 @@
       <tbody>
         <tr
           v-for="mod in installedMods"
-          v-bind:key="mod.name"
+          v-bind:key="mod.name + mod.version"
           :class="{ selected: mod.name === selectedMod.name }"
         >
           <td class="cell-check">
