@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import Portal from '@/pages/Portal'
 import Profiles from '@/pages/Profiles'
+import Settings from '@/pages/Settings'
 
 const Mods = Vue.component('Mods', { template: '<div></div>' })
 const Saves = Vue.component('Saves', { template: '<div></div>' })
@@ -30,6 +31,10 @@ const router = new Router({
     {
       path: '/portal',
       component: Portal,
+    },
+    {
+      path: '/settings',
+      component: Settings,
     },
     {
       path: '*',
